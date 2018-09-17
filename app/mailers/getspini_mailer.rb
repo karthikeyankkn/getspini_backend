@@ -6,8 +6,9 @@ class GetspiniMailer < ApplicationMailer
   #   en.getspini_mailer.sendemail.subject
   #
   
-    def sendemail(lead)
+    def send_email(lead)
 	    @lead = lead
-	    mail to: @lead.email, subject: "Local lead test"
+	    mail to: "<karthikeyan@spinircle.com>" , subject: @lead.category
+	    # mail to: "<karthikeyan@spinircle.com>,<joshua.simon@spinircle.com>,<contact@getspini.com>,<sprasad@hrealty.com>,<pvijay@hrealty.com>" , subject: "Site vist response"
 	  end
 end

@@ -5,8 +5,8 @@ class LeadsController < ApplicationController
 		@lead = Lead.new(lead_params)
 
 		if @lead.save
-			GetspiniMailer.sendemail(@lead).deliver_now
-			render json: @lead.errors, status: :created
+			GetspiniMailer.send_email(@lead).deliver_now
+			render json: @lead, status: :created
 		else
 			render json: @lead.errors, status: :unprocessable_entity
 		end
