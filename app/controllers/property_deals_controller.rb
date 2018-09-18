@@ -8,7 +8,7 @@ class PropertyDealsController < ApplicationController
 		@property_deal = PropertyDeal.new(property_deal_params)
 		if @property_deal.save
 			# render json: @property_deal, status: :created
-			redirect_to action: 'new'
+			redirect_to action: 'show_all'
 		else
 		 	render json: @property_deal.errors.full_messages, status: :bad_request
 		end
