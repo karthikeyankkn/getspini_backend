@@ -56,6 +56,16 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger', '>= 0.1.1'
+
+  # Remove the following if your app does not use Rails
+  gem 'capistrano-rails'
+
+  # Remove the following if your server does not use RVM
+  gem 'capistrano-rvm'
 end
 
 group :test do
