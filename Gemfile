@@ -5,11 +5,10 @@ ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
-
+# Use postgresql as the database for Active Record
+gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -31,16 +30,22 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+#gem "libv8", github: "cowboyd/libv8", submodules: true
+#gem 'selenium-webdriver'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-
-gem 'bootstrap-sass', '~> 3.2.0'
-gem 'autoprefixer-rails'
-
-group :production do
-  # gem 'pg'
-end
+gem 'therubyracer'
+# gem 'httparty'
+gem 'httparty', '~> 0.16.2'
+gem 'bootstrap-sass', '~> 3.3.7'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 5.0'
+gem 'jquery-rails'
+# gem 'mail', '~> 2.7'
+# gem 'fancybox-rails'
+# gem 'fancybox2-rails'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -54,9 +59,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
-
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-passenger', '>= 0.1.1'
@@ -66,11 +68,12 @@ group :development do
 
   # Remove the following if your server does not use RVM
   gem 'capistrano-rvm'
+    # gem 'pry-byebug'
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15', '< 4.0'
+#  gem 'capybara', '>= 2.15', '< 4.0'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
