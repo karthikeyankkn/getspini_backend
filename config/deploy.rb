@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0"
+# lock "~> 3.11.0"
 
 set :application, "getspini_backend"
 set :repo_url, "https://github.com/karthikeyankkn/getspini_backend.git"
@@ -8,7 +8,7 @@ set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 set :rvm_ruby_version, '2.4.1'
 set :passenger_environment_variables, { :path => '/path-to-passenger/bin:$PATH' }
-set :passenger_restart_command, '/path-to-passenger/bin/passenger-config restart-app'
+# set :passenger_restart_command, '/path-to-passenger/bin/passenger-config restart-app'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

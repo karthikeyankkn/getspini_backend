@@ -48,8 +48,10 @@ role :db,  %w{ubuntu@18.191.80.153}
  set :ssh_options, {
    keys: %w(~/.ssh/getspini.pem),
    forward_agent: false,
-   auth_methods: %w(password)
+   auth_methods: %w(publickey password)
  }
+ # server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
+
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
