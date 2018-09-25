@@ -41,9 +41,9 @@
 #
 # Global options
 # --------------
-role :app, %w{ubuntu@18.191.80.153}
-role :web, %w{ubuntu@18.191.80.153}
-role :db,  %w{ubuntu@18.191.80.153}
+role :app, %w{ubuntu@18.223.133.235}
+role :web, %w{ubuntu@18.223.133.235}
+role :db,  %w{ubuntu@18.223.133.235}
 
  set :ssh_options, {
    keys: %w(~/.ssh/getspini.pem),
