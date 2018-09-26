@@ -9,7 +9,7 @@ gem 'rails', '~> 5.2.0'
 #gem 'pg', '>= 0.18', '< 2.0'
 gem 'sqlite3'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+# gem 'puma', '~> 3.11'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -47,21 +47,23 @@ gem 'jquery-rails'
 # gem 'fancybox2-rails'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
+gem 'listen', '~> 3.1', '>= 3.1.5'
 
+group :production do
+  gem 'pg'
+end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
+gem 'figaro'
+gem 'puma'
 group :development do
   gem 'capistrano'
-  gem 'capistrano-bundler'
-  gem 'capistrano-passenger', '>= 0.1.1'
-
-  # Remove the following if your app does not use Rails
-  gem 'capistrano-rails'
-
-  # Remove the following if your server does not use RVM
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
   gem 'capistrano-rvm'
 end
 
