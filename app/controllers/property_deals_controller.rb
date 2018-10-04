@@ -48,6 +48,6 @@ class PropertyDealsController < ApplicationController
 	private
 
 	def property_deal_params
-		params.require(:property_deal).permit(:title, :offer_details, :address, :description, :about, :terms, :seo_url, :offer_img_url)
+		params.require(:property_deal).permit(:title, :offer_details, :address, :description, :about, :terms, :seo_url, :offer_img_url, :banner_url)
 	end
 end
