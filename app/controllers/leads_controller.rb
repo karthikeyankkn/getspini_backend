@@ -1,6 +1,10 @@
 class LeadsController < ApplicationController
 	 skip_before_action :verify_authenticity_token
 
+	def index
+		@lead = Lead.all
+	end
+
 	def create
 		@lead = Lead.new(lead_params)
 
@@ -12,7 +16,13 @@ class LeadsController < ApplicationController
 		end
 	end
 
+	
 
+	def destroy
+		@lead = Lead.find(params[:id])
+		@lead.destroy
+		redirect_to action: 'index'
+	end
 
 
 

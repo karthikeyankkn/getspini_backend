@@ -1,0 +1,27 @@
+<div class="well well-xs">
+    <h1 class="text-center">All offers</h1>
+    <table class="table table-striped">                         
+      <tr>      
+        <th>Id</th>                    
+        <th>Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Category</th>
+        <th>Date and Time</th>
+        <th>Action</th>
+      </tr>
+    <% @lead.each do |data| %>       
+      <tr>
+        <td><%= data.id %></td> 
+        <td><%= data.name %></td> 
+        <td><%= data.phone_number %></td>  
+        <td><%= data.email %></td>  
+        <td><%= data.category %></td>
+        <td><%= data.created_at %></td>
+        <td><%= link_to "", leads_path(data.id), class:"glyphicon glyphicon-chevron-left text-success" %>
+
+            <%= link_to "", leads_path(data.id), method: :delete, data:{confirm: "Are you sure you want to delete"}, class:"glyphicon glyphicon-trash text-danger" %></td>  
+      </tr>
+    <% end %>                        
+    </table>    
+</div>
