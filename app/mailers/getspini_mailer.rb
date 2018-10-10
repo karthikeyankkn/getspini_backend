@@ -8,7 +8,7 @@ class GetspiniMailer < ApplicationMailer
   
     def send_email(lead)
 	    @lead = lead
-	    mail to: "<karthikeyan@spinircle.com>" , subject: @lead.category
+	    mail to: "<karthikeyan@spinircle.com>" , subject: "GETSPINI-WEBSITE-LEAD"
 	    # mail to: "<karthikeyan@spinircle.com>,<joshua.simon@spinircle.com>,<contact@getspini.com>,<sprasad@hrealty.com>,<pvijay@hrealty.com>" , subject: "Site vist response"
 	  end
 end
