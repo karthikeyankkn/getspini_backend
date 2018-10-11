@@ -1,0 +1,64 @@
+<%= form_for @property_deal, html: {class: "nifty_form"} do |f| %>
+  <div class="row" style="padding:5px 18px;">
+    <div class="">
+      <div class="form-group">
+        <label for="title">TITLE:</label>
+        <%= f.text_field :title, class:'form-control', placeholder:'Enter title',required:true  %>
+      </div>
+    </div>
+    <div class="">
+      <div class="form-group">
+        <label for="Offer Details">OFFER DETAILS</label>
+        <%= f.text_area(:offer_details, size: '50x10', class:'form-control', placeholder:'Enter offer details') %>
+      </div>
+    </div>
+    <div class="">
+      <div class="form-group">
+        <label for="Address">ADDRESS:</label>
+        <%= f.text_area :address, size: '50x10', class:'form-control', placeholder:'Enter Address' ,required:true %>
+      </div>
+    </div>
+    <div class="">
+      <div class="form-group">
+        <label for="Description">DESCRIPTION:</label>
+        <%= f.text_area :description, size: '50x10', class:'form-control', placeholder:'Enter Description' ,required:true %>
+      </div>
+    </div>
+    <div class="">
+      <div class="form-group">
+        <label for="About">ABOUT:</label>
+        <%= f.text_area :about, size: '50x10', class:'form-control', placeholder:'Enter About' ,required:true %>
+      </div>
+    </div>
+    <div class="">
+      <div class="form-group">
+        <label for="Terms">TERMS:</label>
+        <%= f.text_area :terms, size: '50x10', class:'form-control', placeholder:'Enter Terms' ,required:true %>
+      </div>
+    </div>
+    <div class="">
+      <div class="form-group">
+        <label for="Seo_url">SEO URL:</label>
+        <%= f.text_field :seo_url, class:'form-control', placeholder:'Enter seo url',required:true  %>
+      </div>
+    </div>
+    <div class="">
+      <div class="form-group">
+        <label for="Offer Image Url">OFFER IMAGE URL:</label>
+        <%= f.text_field :offer_img_url, class:'form-control', placeholder:'Enter offer image url',required:true  %>
+      </div>
+    </div>
+    <div class="">
+      <div class="form-group">
+        <label for="Banner image url">BANNER IMAGE URL:</label>
+        <%= f.text_field :banner_url, class:'form-control', placeholder:'Enter banner url' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 box text-center">
+      <%= f.submit "Submit",class:'btn btn-danger'  %>
+    </div>
+  </div>
+  <!-- </form> --> 
+  <% end %>

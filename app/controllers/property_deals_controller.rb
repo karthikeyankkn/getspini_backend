@@ -1,5 +1,6 @@
 class PropertyDealsController < ApplicationController
 	 skip_before_action :verify_authenticity_token
+	 before_action :set_property_deal, only: [:edit, :destroy, :update, :show]
 
 	def new
 		@property_deal = PropertyDeal.new
@@ -24,8 +25,8 @@ class PropertyDealsController < ApplicationController
 	end
 
 	def show
-		@property_deal = PropertyDeal.find(params[:id])
-		render json: @property_deal, status: :created
+		# @property_deal = PropertyDeal.find(params[:id])
+		# render json: @property_deal, status: :created
 	end
 
 	def edit
@@ -33,6 +34,7 @@ class PropertyDealsController < ApplicationController
 	
 	def update
 		if @property_deal.update(property_deal_params)
+			flash[:success] = "property_deal was successfully updated"
 			redirect_to property_deal_path(@property_deal)
 		else
 			render 'edit'	
@@ -46,7 +48,9 @@ class PropertyDealsController < ApplicationController
 	end
 
 	private
-
+	def set_property_deal
+			@property_deal = PropertyDeal.find(params[:id])
+		end
 	def property_deal_params
 		params.require(:property_deal).permit(:title, :offer_details, :address, :description, :about, :terms, :seo_url, :offer_img_url, :banner_url)
 	end

@@ -4,13 +4,13 @@
       <tr>      
         <th>Id</th>                    
         <th>Title</th>
-        <th>Offer Details</th>
+        <!-- <th>Offer Details</th> -->
         <!-- <th>Address</th>
         <th>Description</th>
         <th>About</th>
         <th>Terms</th> -->
         <th>Seo_Url</th>
-        <th>Offer Image Url</th>
+        <!-- <th>Offer Image Url</th> -->
         <!-- <th>banner_url</th> -->
         <th>Action</th>
       </tr>
@@ -18,16 +18,16 @@
       <tr>
         <td><%= data.id %></td> 
         <td><%= data.title %></td> 
-        <td><%= data.offer_details %></td>  
+        <!-- <td><%= data.offer_details %></td>   -->
         <!-- <td><%= data.address %></td>   -->
         <!-- <td><%= data.description %></td>   -->
         <!-- <td><%= data.about %></td>   -->
         <!-- <td><%= data.terms %></td>   -->
         <td><%= data.seo_url %></td>  
-        <td><%= data.offer_img_url %></td>  
+        <!-- <td><%= data.offer_img_url %></td>   -->
         <!-- <td><%= data.banner_url %></td>  -->
         <td><%= link_to "", property_deal_path(data.id), class:"glyphicon glyphicon-chevron-left text-success" %>
-
+            <%= link_to "", edit_property_deal_path(data.id), class:"glyphicon glyphicon-edit text-warning" %>
             <%= link_to "", property_deal_path(data.id), method: :delete, data:{confirm: "Are you sure you want to delete"}, class:"glyphicon glyphicon-trash text-danger" %></td>
       </tr>
     <% end %>                        
