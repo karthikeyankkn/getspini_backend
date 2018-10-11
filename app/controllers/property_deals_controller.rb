@@ -24,11 +24,15 @@ class PropertyDealsController < ApplicationController
 		@property_deal = PropertyDeal.all
 	end
 
-	def show
-		# @property_deal = PropertyDeal.find(params[:id])
-		# render json: @property_deal, status: :created
+	def show_json
+		@property_deal = PropertyDeal.find(params[:id])
+		render json: @property_deal, status: :created
 	end
 
+	def show
+		
+	end
+	
 	def edit
 	end
 	
