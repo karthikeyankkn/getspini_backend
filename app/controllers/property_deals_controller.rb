@@ -21,7 +21,7 @@ class PropertyDealsController < ApplicationController
 	end
 
 	def show_all
-		@property_deal = PropertyDeal.all
+		@property_deal = PropertyDeal.paginate(:page => params[:page], :per_page => 5)
 	end
 
 	def show_json
